@@ -6,14 +6,12 @@ This project builds a Docker image for [JBoss Fuse](http://www.jboss.org/product
 
 You can then run a Fuse server with the following command:
 
-    docker run -it jboss/jboss-fuse-full bin/fuse
+    docker run -it cyotee/jboss-fuse-docker
 
 Note that the web console will not be accessible since we have not yet defined users that can log into it
 and have not exposed the web console port on the docker host.
 
 ## Extending the image
-
-
 
 First, create a `users.properties` file that contains your users, passwords, and roles.  For example:
 
