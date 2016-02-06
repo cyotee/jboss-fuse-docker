@@ -3,7 +3,6 @@ FROM jboss/base-jdk:7
 
 MAINTAINER Robert Greathouse <robert.i.greathouse@gmail.com>
 
-USER 1001
 # Set the FUSE_VERSION env variable
 ENV FUSE_VERSION 6.2.0.redhat-099
 
@@ -21,7 +20,6 @@ ENV FUSE_PUBLIC_STOMP_SSL_PORT 61614
 # Install fuse in the image.
 COPY install.sh /opt/jboss/install.sh
 COPY users.properties /opt/jboss/jboss-fuse/etc/users.properties
-RUN chown 1001:0 /opt/jboss/install.sh
 
 RUN /opt/jboss/install.sh
 
