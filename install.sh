@@ -21,7 +21,7 @@ set -e
 
 # Download and extract the distro
 #curl -O ${FUSE_DISTRO_URL}
-tar -xvf ${FUSE_ARTIFACT_ID}-${FUSE_VERSION}.zip
+zip -xvf ${FUSE_ARTIFACT_ID}-${FUSE_VERSION}.zip
 rm ${FUSE_ARTIFACT_ID}-${FUSE_VERSION}.zip
 mv jboss-fuse-${FUSE_VERSION} jboss-fuse
 #ln -s jboss-fuse-${FUSE_VERSION} jboss-fuse
