@@ -9,7 +9,7 @@ MAINTAINER Robert Greathouse <robert.i.greathouse@gmail.com>
 ENV FUSE_ARTIFACT_ID=fuse.zip
 #ENV FUSE_DISTRO_URL=http://origin-repository.jboss.org/nexus/content/groups/ea/org/jboss/fuse/${FUSE_ARTIFACT_ID}/${FUSE_VERSION}/${FUSE_ARTIFACT_ID}-${FUSE_VERSION}.zip
 ENV JBOSS_DIR=/opt/jboss
-ENV FUSE_HOME=$JBOSS_DIR/fuse
+ENV FUSE_HOME=$JBOSS_DIR/jboss-fuse
 
 # If the container is launched with re-mapped ports, these ENV vars should
 # be set to the remapped values.
@@ -24,7 +24,7 @@ ENV FUSE_PUBLIC_STOMP_SSL_PORT 61614
 
 # Install fuse in the image.
 COPY $FUSE_ARTIFACT_ID $JBOSS_DIR
-RUN jar -xvf $JBOSS_DIR/${FUSE_ARTIFACT_ID} && \
+RUN tar -zxvf $JBOSS_DIR/${FUSE_ARTIFACT_ID} -C $JBOSS_DIR/&& \
     rm /$JBOSS_DIR/$FUSE_ARTIFACT_ID
 COPY fuse/ $FUSE_HOME
 
