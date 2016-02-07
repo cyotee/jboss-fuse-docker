@@ -83,6 +83,8 @@ bind.address=0.0.0.0
 '>> jboss-fuse/etc/system.properties
 echo '' >> jboss-fuse/etc/users.properties
 
-tar -zcvf jboss-fuse.tar.gz -C `pwd` .
+tar -zcvf jboss-fuse.tar.gz -C `pwd` ./jboss-fuse
+
+
 
 #rm /opt/jboss/install.sh
