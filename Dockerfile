@@ -6,7 +6,7 @@ MAINTAINER Robert Greathouse <robert.i.greathouse@gmail.com>
 # Set the FUSE_VERSION env variable
 #ENV FUSE_VERSION 6.2.0.redhat-099
 #ENV FUSE_ARTIFACT_ID=jboss-fuse-karaf-full
-ENV FUSE_ARTIFACT_ID=jboss-fuse.tar.gz
+#ENV FUSE_ARTIFACT_ID=jboss-fuse.tar.gz
 #ENV FUSE_DISTRO_URL=http://origin-repository.jboss.org/nexus/content/groups/ea/org/jboss/fuse/${FUSE_ARTIFACT_ID}/${FUSE_VERSION}/${FUSE_ARTIFACT_ID}-${FUSE_VERSION}.zip
 ENV JBOSS_DIR=/opt/jboss
 ENV FUSE_HOME=$JBOSS_DIR/jboss-fuse
