@@ -1,0 +1,7 @@
+if [ -z "$FUSE_KARAF_NAME" ]; then
+  export FUSE_KARAF_NAME="$HOSTNAME"
+fi
+if [ -z "$FUSE_RUNTIME_ID" ]; then
+  export FUSE_RUNTIME_ID="$FUSE_KARAF_NAME"
+fi
+export KARAF_OPTS="-Dkaraf.name=${FUSE_KARAF_NAME} -Druntime.id=${FUSE_RUNTIME_ID}
