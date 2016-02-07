@@ -20,8 +20,7 @@ ENV FUSE_PUBLIC_AMQP_SSL_PORT 5671
 ENV FUSE_PUBLIC_STOMP_SSL_PORT 61614
 
 # Install fuse in the image.
-#COPY install.sh /opt/jboss/install.sh
-#RUN /opt/jboss/install.sh
+#
 
 RUN curl -O /$JBOSS_DIR/${FUSE_DISTRO_URL} && \
     jar -xvf /$JBOSS_DIR/${FUSE_ARTIFACT_ID}-${FUSE_VERSION}.zip -C $JBOSS_DIR/jboss-fuse && \
@@ -48,7 +47,8 @@ RUN curl -O /$JBOSS_DIR/${FUSE_DISTRO_URL} && \
 
 
 COPY users.properties $JBOSS_DIR/jboss-fuse/etc/users.properties
-jar -xvf ${FUSE_ARTIFACT_ID}-${FUSE_VERSION}.zip
+COPY install.sh /opt/jboss/install.sh
+RUN /opt/jboss/install.sh
 
 EXPOSE 8181 8101 1099 44444 61616 1883 5672 61613 61617 8883 5671 61614
 
