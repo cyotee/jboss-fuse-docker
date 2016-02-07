@@ -1,13 +1,13 @@
 #!/bin/bash
 
 #DOCKER_REGISTRY=registry.cloudapps-4688.oslab.opentlc.com
-#DOCKER_REGISTRY=docker.io
+DOCKER_REGISTRY=docker.io
 
 #DOCKER_REGISTRY_NAMESPACE=fuse-demo
-#DOCKER_REGISTRY_NAMESPACE=cyotee
+DOCKER_REGISTRY_NAMESPACE=cyotee
 
-#DOCKER_IMAGE_NAME=jboss-fuse-docker
-#DOCKER_IMAGE_VERSION=6.2.0.redhat-099
+DOCKER_IMAGE_NAME=jboss-fuse-docker
+DOCKER_IMAGE_VERSION=6.2.0.redhat-099
 
 FUSE_ARTIFACT_ID=jboss-fuse-karaf-full
 FUSE_VERSION=6.2.0.redhat-099
