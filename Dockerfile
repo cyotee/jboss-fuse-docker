@@ -24,7 +24,7 @@ ENV FUSE_PUBLIC_STOMP_SSL_PORT 61614
 # Install fuse in the image.
 #
 RUN mkdir $JBOSS_DIR
-RUN mkdir $JBOSS_DIR/
+RUN mkdir $FUSE_DIR
 
 RUN curl -O  ${FUSE_DISTRO_URL} && \
     jar -xvf ${FUSE_ARTIFACT_ID}-${FUSE_VERSION}.zip -C $JBOSS_DIR/jboss-fuse && \
