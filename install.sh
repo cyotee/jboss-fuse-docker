@@ -84,9 +84,9 @@ bind.address=0.0.0.0
 '>> jboss-fuse/etc/system.properties
 echo '' >> jboss-fuse/etc/users.properties
 
-tar -zcvf ${FUSE_ARTIFACT_ID_FOR_DOCKER} -C `pwd` ./jboss-fuse
+tar -zcvf ${FUSE_ARTIFACT_ID_FOR_DOCKER} ./jboss-fuse -C `pwd`
 
-
-
-
+rm -f ${FUSE_ARTIFACT_ID}-${FUSE_VERSION}.zip
+rm -f ${FUSE_ARTIFACT_ID_FOR_DOCKER}
+rm -rf ./jboss-fuse
 #rm /opt/jboss/install.sh
