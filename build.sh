@@ -13,6 +13,8 @@ FUSE_ARTIFACT_ID=jboss-fuse-karaf-full
 FUSE_VERSION=6.2.0.redhat-099
 FUSE_DISTRO_URL=http://origin-repository.jboss.org/nexus/content/groups/ea/org/jboss/fuse/${FUSE_ARTIFACT_ID}/${FUSE_VERSION}/${FUSE_ARTIFACT_ID}-${FUSE_VERSION}.zip
 
+FUSE_ARTIFACT_ID_FOR_DOCKER=jboss-fuse.tar.gz
+
 
 echo "Executing install.sh to download an prepare server artifact."
 ./install.sh
