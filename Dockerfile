@@ -22,16 +22,18 @@ ENV FUSE_PUBLIC_STOMP_SSL_PORT 61614
 # Install fuse in the image.
 #
 
-RUN curl -O /$JBOSS_DIR/${FUSE_DISTRO_URL} && \
-    jar -xvf /$JBOSS_DIR/${FUSE_ARTIFACT_ID}-${FUSE_VERSION}.zip -C $JBOSS_DIR/jboss-fuse && \
-    chmod a+x /$JBOSS_DIR/jboss-fuse/bin/* && \
-    rm /$JBOSS_DIR/jboss-fuse/bin/*.bat && \
-    rm /$JBOSS_DIR/jboss-fuse/bin/start && \
-    rm /$JBOSS_DIR/jboss-fuse/bin/stop && \
-    rm /$JBOSS_DIR/jboss-fuse/bin/status && \
-    rm /$JBOSS_DIR/jboss-fuse/bin/patch && \
-    rm -rf /$JBOSS_DIR/jboss-fuse/extras && \
-    rm -rf /$JBOSS_DIR/jboss-fuse/quickstarts && \
+RUN curl -O  ${FUSE_DISTRO_URL} && \
+    mkdir $JBOSS_DIR && \
+    mkdir $JBOSS_DIR/jboss-fuse && \
+    jar -xvf ${FUSE_ARTIFACT_ID}-${FUSE_VERSION}.zip -C $JBOSS_DIR/jboss-fuse && \
+    chmod a+x $JBOSS_DIR/jboss-fuse/bin/* && \
+    rm $JBOSS_DIR/jboss-fuse/bin/*.bat && \
+    rm $JBOSS_DIR/jboss-fuse/bin/start && \
+    rm $JBOSS_DIR/jboss-fuse/bin/stop && \
+    rm $JBOSS_DIR/jboss-fuse/bin/status && \
+    rm $JBOSS_DIR/jboss-fuse/bin/patch && \
+    rm -rf $JBOSS_DIR/jboss-fuse/extras && \
+    rm -rf $JBOSS_DIR/jboss-fuse/quickstarts && \
     sed -i -e 's/environment.prefix=FABRIC8_/environment.prefix=FUSE_/' jboss-fuse/etc/system.properties && \
     sed -i -e '/karaf.name = root/d' jboss-fuse/etc/system.properties && \
     sed -i -e '/runtime.id=/d' jboss-fuse/etc/system.properties && \
