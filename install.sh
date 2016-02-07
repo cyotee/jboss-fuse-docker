@@ -15,9 +15,9 @@ set -e
 #
 # Lets switch to the /opt/jboss dir
 #
-mkdir opt
-mkdir opt/jboss
-cd opt/jboss
+#mkdir opt
+#mkdir opt/jboss
+#cd opt/jboss
 
 # Download and extract the distro
 #curl -O ${FUSE_DISTRO_URL}
