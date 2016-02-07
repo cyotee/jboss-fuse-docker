@@ -20,6 +20,7 @@ set -e
 #cd opt/jboss
 
 # Download and extract the distro
+echo "Downloading ${FUSE_ARTIFACT_ID} version ${FUSE_VERSION}"
 curl -O ${FUSE_DISTRO_URL}
 #jar -xvf ${FUSE_ARTIFACT_ID}-${FUSE_VERSION}.zip
 unzip ${FUSE_ARTIFACT_ID}-${FUSE_VERSION}.zip
