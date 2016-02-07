@@ -6,19 +6,16 @@
 
 # Adjust the following env vars if needed.
 FUSE_ARTIFACT_ID=jboss-fuse-karaf-full
+echo "Set EV FUSE_ARTIFACT_ID to ${FUSE_ARTIFACT_ID}"
 FUSE_VERSION=6.2.0.redhat-099
+echo "Set EV FUSE_VERSION to ${FUSE_VERSION}"
 FUSE_DISTRO_URL=http://origin-repository.jboss.org/nexus/content/groups/ea/org/jboss/fuse/${FUSE_ARTIFACT_ID}/${FUSE_VERSION}/${FUSE_ARTIFACT_ID}-${FUSE_VERSION}.zip
+echo "Set EV FUSE_DISTRO_URL to ${FUSE_DISTRO_URL}"
 FUSE_ARTIFACT_ID_FOR_DOCKER=jboss-fuse.tar.gz
+echo "Set EV FUSE_ARTIFACT_ID_FOR_DOCKER to ${FUSE_ARTIFACT_ID_FOR_DOCKER}"
 
 # Lets fail fast if any command in this script does succeed.
 set -e
-
-#
-# Lets switch to the /opt/jboss dir
-#
-#mkdir opt
-#mkdir opt/jboss
-#cd opt/jboss
 
 # Download and extract the distro
 echo "Downloading ${FUSE_ARTIFACT_ID} version ${FUSE_VERSION}"
