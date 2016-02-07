@@ -23,9 +23,9 @@ ENV FUSE_PUBLIC_AMQP_SSL_PORT 5671
 ENV FUSE_PUBLIC_STOMP_SSL_PORT 61614
 
 # Install fuse in the image.
-COPY ${FUSE_ARTIFACT_ID_FOR_DOCKER} ${JBOSS_DIR}
-RUN tar -zxvf ${JBOSS_DIR}/${FUSE_ARTIFACT_ID_FOR_DOCKER} -C ${JBOSS_DIR} && \
-    rm ${JBOSS_DIR}/${FUSE_ARTIFACT_ID_FOR_DOCKER}
+COPY jboss-fuse.tar.gz /opt/jboss
+RUN tar -zxvf /opt/jboss/jboss-fuse.tar.gz -C /opt/jboss && \
+    rm /opt/jboss/jboss-fuse.tar.gz
 #COPY fuse/ $FUSE_HOME
 
 EXPOSE 8181 8101 1099 44444 61616 1883 5672 61613 61617 8883 5671 61614
