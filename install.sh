@@ -104,5 +104,5 @@ echo '' >> jboss-fuse/etc/users.properties
 echo "Removing build artifacts."
 echo "Deleting ${FUSE_ARTIFACT_ID}-${FUSE_VERSION}.zip"
 rm -f ${FUSE_ARTIFACT_ID}-${FUSE_VERSION}.zip
-echo "Deleting ./jboss-fuse."
-rm -rf ./jboss-fuse
+##echo "Deleting ./jboss-fuse."
+##rm -rf ./jboss-fuse
