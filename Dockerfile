@@ -16,7 +16,9 @@ ENV FUSE_PUBLIC_STOMP_SSL_PORT 61614
 
 # Install fuse in the image.
 COPY jboss-fuse.tar.gz /opt/jboss/
-RUN tar -zxvf /opt/jboss/jboss-fuse.tar.gz -C /opt/jboss && \
+RUN useradd -r -g fuse fuse && \
+    tar -zxvf /opt/jboss/jboss-fuse.tar.gz -C /opt/jboss && \
+    chown -R fuse:fuse /opt/jboss/jboss-fuse
     rm /opt/jboss/jboss-fuse.tar.gz
 #COPY fuse/ $FUSE_HOME
 
@@ -31,6 +33,7 @@ VOLUME /opt/jboss/jboss-fuse/data
 VOLUME /opt/jboss/jboss-fuse/deploy
 
 # lets default to the jboss-fuse dir so folks can more easily navigate to around the server install
+USER fuse
 WORKDIR /opt/jboss/jboss-fuse
 ENTRYPOINT ["/opt/jboss/jboss-fuse/bin/fuse"]
 CMD ["server"]
