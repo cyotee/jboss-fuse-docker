@@ -98,11 +98,11 @@ bind.address=0.0.0.0
 '>> jboss-fuse/etc/system.properties
 echo '' >> jboss-fuse/etc/users.properties
 
-echo "Packaging prepared server for use by Docker with command: tar -zcvf ${FUSE_ARTIFACT_ID_FOR_DOCKER} ./jboss-fuse -C `pwd`"
-tar -zcvf ${FUSE_ARTIFACT_ID_FOR_DOCKER} ./jboss-fuse -C `pwd`
+##echo "Packaging prepared server for use by Docker with command: tar -zcvf ${FUSE_ARTIFACT_ID_FOR_DOCKER} ./jboss-fuse -C `pwd`"
+##tar -zcvf ${FUSE_ARTIFACT_ID_FOR_DOCKER} ./jboss-fuse -C `pwd`
 
-echo "Removing build artifacts."
-echo "Deleting ${FUSE_ARTIFACT_ID}-${FUSE_VERSION}.zip"
-rm -f ${FUSE_ARTIFACT_ID}-${FUSE_VERSION}.zip
-echo "Deleting ./jboss-fuse."
-rm -rf ./jboss-fuse
+##echo "Removing build artifacts."
+##echo "Deleting ${FUSE_ARTIFACT_ID}-${FUSE_VERSION}.zip"
+##rm -f ${FUSE_ARTIFACT_ID}-${FUSE_VERSION}.zip
+##echo "Deleting ./jboss-fuse."
+##rm -rf ./jboss-fuse
