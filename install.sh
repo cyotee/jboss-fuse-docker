@@ -13,6 +13,7 @@ FUSE_DISTRO_URL=http://origin-repository.jboss.org/nexus/content/groups/ea/org/j
 echo "Set EV FUSE_DISTRO_URL to ${FUSE_DISTRO_URL}"
 FUSE_ARTIFACT_ID_FOR_DOCKER=jboss-fuse.tar.gz
 echo "Set EV FUSE_ARTIFACT_ID_FOR_DOCKER to ${FUSE_ARTIFACT_ID_FOR_DOCKER}"
+echo "FUSE_ARTIFACT_ID_FOR_DOCKER EV successfully inherited as ${FUSE_ARTIFACT_ID_FOR_DOCKER}"
 
 # Lets fail fast if any command in this script does succeed.
 set -e
