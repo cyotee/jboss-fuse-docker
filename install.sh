@@ -20,7 +20,7 @@ set -e
 
 # Download and extract the distro
 echo "Downloading ${FUSE_ARTIFACT_ID} version ${FUSE_VERSION}"
-curl -O ${FUSE_DISTRO_URL}
+#curl -O ${FUSE_DISTRO_URL}
 echo "Downloaded ${FUSE_ARTIFACT_ID} version ${FUSE_VERSION}"
 #jar -xvf ${FUSE_ARTIFACT_ID}-${FUSE_VERSION}.zip
 echo "Extracting ${FUSE_ARTIFACT_ID}-${FUSE_VERSION}.zip"
