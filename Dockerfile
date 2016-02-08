@@ -33,5 +33,4 @@ VOLUME /opt/jboss/jboss-fuse/deploy
 
 # lets default to the jboss-fuse dir so folks can more easily navigate to around the server install
 WORKDIR /opt/jboss/jboss-fuse
-ENTRYPOINT ["/opt/jboss/jboss-fuse/bin/fuse"]
-CMD ["server"]
+CMD ["/opt/jboss/jboss-fuse/bin/fuse", "server"]
