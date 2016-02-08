@@ -96,7 +96,8 @@ echo "Setting Fuse to bind to all available interfaces."
 echo '
 bind.address=0.0.0.0
 '>> jboss-fuse/etc/system.properties
-echo '' >> jboss-fuse/etc/users.properties
+echo 'admin=password,Operator, Maintainer, Deployer, Auditor, Administrator, SuperUser' >> jboss-fuse/etc/users.properties
+echo 'dev=password,Operator, Maintainer, Deployer' >> jboss-fuse/etc/users.properties
 
 ##echo "Packaging prepared server for use by Docker with command: tar -zcvf ${FUSE_ARTIFACT_ID_FOR_DOCKER} ./jboss-fuse -C `pwd`"
 ##tar -zcvf ${FUSE_ARTIFACT_ID_FOR_DOCKER} ./jboss-fuse -C `pwd`
