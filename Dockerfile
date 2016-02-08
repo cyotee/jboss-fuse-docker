@@ -3,10 +3,6 @@ FROM jboss/base-jdk:7
 
 MAINTAINER Robert Greathouse <robert.i.greathouse@gmail.com>
 
-ENV JBOSS_DIR /opt/jboss
-#ENV FUSE_ARTIFACT_ID_FOR_DOCKER jboss-fuse.tar.gz
-ENV FUSE_HOME $JBOSS_DIR/jboss-fuse
-
 # If the container is launched with re-mapped ports, these ENV vars should
 # be set to the remapped values.
 ENV FUSE_PUBLIC_OPENWIRE_PORT 61616
@@ -19,9 +15,9 @@ ENV FUSE_PUBLIC_AMQP_SSL_PORT 5671
 ENV FUSE_PUBLIC_STOMP_SSL_PORT 61614
 
 # Install fuse in the image.
-COPY jboss-fuse.tar.gz $JBOSS_DIR/
-RUN tar -zxvf $JBOSS_DIR/$FUSE_ARTIFACT_ID_FOR_DOCKER -C $JBOSS_DIR && \
-    rm $JBOSS_DIR/$FUSE_ARTIFACT_ID_FOR_DOCKER
+COPY jboss-fuse.tar.gz /opt/jboss/jboss-fuse.tar.gz
+RUN tar -zxvf /opt/jboss/jboss-fuse.tar.gz -C /opt/jboss && \
+    rm /opt/jboss/jboss-fuse.tar.gz
 #COPY fuse/ $FUSE_HOME
 
 EXPOSE 8181 8101 1099 44444 61616 1883 5672 61613 61617 8883 5671 61614
@@ -29,11 +25,11 @@ EXPOSE 8181 8101 1099 44444 61616 1883 5672 61613 61617 8883 5671 61614
 #
 # The following directories can hold config/data, so lets suggest the user
 # mount them as volumes.
-VOLUME $FUSE_HOME/bin
-VOLUME $FUSE_HOME/etc
-VOLUME $FUSE_HOME/data
-VOLUME $FUSE_HOME/deploy
+VOLUME /opt/jboss/jboss-fuse/bin
+VOLUME /opt/jboss/jboss-fuse/etc
+VOLUME /opt/jboss/jboss-fuse/data
+VOLUME /opt/jboss/jboss-fuse/deploy
 
 # lets default to the jboss-fuse dir so folks can more easily navigate to around the server install
-WORKDIR $FUSE_HOME
-CMD $FUSE_HOME/bin/fuse server
+WORKDIR /opt/jboss/jboss-fuse
+CMD /opt/jboss/jboss-fuse/bin/fuse server
