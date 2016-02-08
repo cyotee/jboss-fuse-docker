@@ -14,9 +14,6 @@ ENV FUSE_PUBLIC_MQTT_SSL_PORT 8883
 ENV FUSE_PUBLIC_AMQP_SSL_PORT 5671
 ENV FUSE_PUBLIC_STOMP_SSL_PORT 61614
 
-RUN groupadd fuse && \
-    useradd -r -g fuse fuse
-
 # Install fuse in the image.
 COPY jboss-fuse /opt/jboss/jboss-fuse
 
@@ -35,7 +32,6 @@ VOLUME /opt/jboss/jboss-fuse/data
 VOLUME /opt/jboss/jboss-fuse/deploy
 
 # lets default to the jboss-fuse dir so folks can more easily navigate to around the server install
-USER fuse
 WORKDIR /opt/jboss/jboss-fuse
 ENTRYPOINT ["/opt/jboss/jboss-fuse/bin/fuse"]
 CMD ["server"]

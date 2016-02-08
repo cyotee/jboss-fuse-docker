@@ -105,6 +105,6 @@ echo 'dev=password,Operator, Maintainer, Deployer' >> jboss-fuse/etc/users.prope
 echo "Removing build artifacts."
 echo "Deleting ${FUSE_ARTIFACT_ID}-${FUSE_VERSION}.zip"
 rm -f ${FUSE_ARTIFACT_ID}-${FUSE_VERSION}.zip
-chown -R fuse:fuse /opt/jboss/jboss-fuse
+#chown -R fuse:fuse /opt/jboss/jboss-fuse
 ##echo "Deleting ./jboss-fuse."
 ##rm -rf ./jboss-fuse
