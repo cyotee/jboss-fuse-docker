@@ -25,8 +25,8 @@ echo "Downloaded ${FUSE_ARTIFACT_ID} version ${FUSE_VERSION}"
 #jar -xvf ${FUSE_ARTIFACT_ID}-${FUSE_VERSION}.zip
 echo "Extracting ${FUSE_ARTIFACT_ID}-${FUSE_VERSION}.zip"
 unzip ${FUSE_ARTIFACT_ID}-${FUSE_VERSION}.zip
-echo "Deleting downloaded artifact ${FUSE_ARTIFACT_ID}-${FUSE_VERSION}.zip"
-rm ${FUSE_ARTIFACT_ID}-${FUSE_VERSION}.zip
+#echo "Deleting downloaded artifact ${FUSE_ARTIFACT_ID}-${FUSE_VERSION}.zip"
+#rm ${FUSE_ARTIFACT_ID}-${FUSE_VERSION}.zip
 echo "Moving extracted distribution to generalized path."
 mv jboss-fuse-${FUSE_VERSION} jboss-fuse
 echo "Making Fuse binaries executable."
