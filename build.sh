@@ -14,7 +14,7 @@ echo "Executing install.sh to download an prepare server artifact."
 ./install.sh
 echo "install.sh completed"
 
-DOCKER_REGISTRY=registry.cloudapps-4688.oslab.opentlc.com
+DOCKER_REGISTRY=registry.cloudapps-6b83.oslab.opentlc.com
 #DOCKER_REGISTRY=docker.io
 
 DOCKER_REGISTRY_NAMESPACE=fuse-demo
