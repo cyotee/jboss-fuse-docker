@@ -107,12 +107,12 @@ echo 'dev=password,Operator, Maintainer, Deployer' >> jboss-fuse/etc/users.prope
 
 mkdir jboss-fuse/instances
 
-echo "Packaging prepared server for use by Docker with command: tar -zcvf ${FUSE_ARTIFACT_ID_FOR_DOCKER} ./jboss-fuse -C `pwd`"
-tar -zcvf ${FUSE_ARTIFACT_ID_FOR_DOCKER} ./jboss-fuse -C `pwd`
+#echo "Packaging prepared server for use by Docker with command: tar -zcvf ${FUSE_ARTIFACT_ID_FOR_DOCKER} ./jboss-fuse -C `pwd`"
+#tar -zcvf ${FUSE_ARTIFACT_ID_FOR_DOCKER} ./jboss-fuse -C `pwd`
 
 echo "Removing build artifacts."
 echo "Deleting ${FUSE_ARTIFACT_ID}-${FUSE_VERSION}"
-rm -rf ${FUSE_ARTIFACT_ID}-${FUSE_VERSION}
+#rm -rf ${FUSE_ARTIFACT_ID}-${FUSE_VERSION}.zip
 #chown -R fuse:fuse /opt/jboss/jboss-fuse
-echo "Deleting ./jboss-fuse."
-rm -rf ./jboss-fuse
+#echo "Deleting ./jboss-fuse."
+#rm -rf ./jboss-fuse
