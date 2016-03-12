@@ -18,9 +18,12 @@ echo "FUSE_ARTIFACT_ID_FOR_DOCKER EV successfully inherited as ${FUSE_ARTIFACT_I
 # Lets fail fast if any command in this script does succeed.
 set -e
 
+
 # Download and extract the distro
+echo "Changing to installs directory"
+cd installs/
 echo "Downloading ${FUSE_ARTIFACT_ID} version ${FUSE_VERSION}"
-#curl -O ${FUSE_DISTRO_URL}
+curl -O ${FUSE_DISTRO_URL}
 echo "Downloaded ${FUSE_ARTIFACT_ID} version ${FUSE_VERSION}"
 #jar -xvf ${FUSE_ARTIFACT_ID}-${FUSE_VERSION}.zip
 echo "Extracting ${FUSE_ARTIFACT_ID}-${FUSE_VERSION}.zip"
