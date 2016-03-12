@@ -22,6 +22,7 @@ set -e
 # Download and extract the distro
 echo "Changing to installs directory"
 cd installs/
+echo `pwd`
 echo "Downloading ${FUSE_ARTIFACT_ID} version ${FUSE_VERSION}"
 curl -O ${FUSE_DISTRO_URL}
 echo "Downloaded ${FUSE_ARTIFACT_ID} version ${FUSE_VERSION}"
