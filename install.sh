@@ -18,13 +18,13 @@ echo "FUSE_ARTIFACT_ID_FOR_DOCKER EV successfully inherited as ${FUSE_ARTIFACT_I
 # Lets fail fast if any command in this script does succeed.
 set -e
 
+echo "Changing to installs directory"
+cd installs/
+echo `pwd`
 
 # Download and extract the distro
 if [ ! -d jboss-fuse/ ];
 then
-	echo "Changing to installs directory"
-	cd installs/
-	echo `pwd`
 	if [ ! -f ${FUSE_ARTIFACT_ID}-${FUSE_VERSION}.zip ];
 	then
     		echo "Downloading ${FUSE_ARTIFACT_ID} version ${FUSE_VERSION}"
@@ -139,16 +139,19 @@ then
 		bind.address=0.0.0.0
 	'>> jboss-fuse/etc/system.properties
 	
-	echo 'admin=password,Operator, Maintainer, Deployer, Auditor, Administrator, SuperUser' >> jboss-fuse/etc/users.properties
-	echo 'dev=password,Operator, Maintainer, Deployer' >> jboss-fuse/etc/users.properties
+	printf '\nadmin=password,Operator, Maintainer, Deployer, Auditor, Administrator, SuperUser' >> jboss-fuse/etc/users.properties
+	printf '\ndev=password,Operator, Maintainer, Deployer' >> jboss-fuse/etc/users.properties
 
 	mkdir jboss-fuse/instances
 	mkdir -p jboss-fuse/data/log/
 	touch jboss-fuse/data/log/karaf.log
 fi
 
+if [ ! -f ${FUSE_ARTIFACT_ID_FOR_DOCKER} ];
+then
 	echo "Packaging prepared server for use by Docker with command: tar -zcvf ${FUSE_ARTIFACT_ID_FOR_DOCKER} ./jboss-fuse -C `pwd`"
 	tar -zcvf ${FUSE_ARTIFACT_ID_FOR_DOCKER} ./jboss-fuse -C `pwd`
+fi
 
 #echo "Removing build artifacts."
 #echo "Deleting ${FUSE_ARTIFACT_ID}-${FUSE_VERSION}"
