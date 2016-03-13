@@ -41,12 +41,43 @@ ls -al jboss-fuse/
 echo "Making Fuse binaries executable."
 chmod a+x jboss-fuse/bin/*
 echo "Deleting unneeded binaries."
-rm jboss-fuse/bin/*.bat jboss-fuse/bin/start jboss-fuse/bin/stop jboss-fuse/bin/status jboss-fuse/bin/patch
+if [ -f jboss-fuse/bin/*.bat];
+then
+    rm jboss-fuse/bin/*.bat
+fi
+
+if [ -f jboss-fuse/bin/start];
+then
+    rm jboss-fuse/bin/start
+fi
+
+if [ -f jboss-fuse/bin/stop];
+then
+    rm jboss-fuse/bin/stop
+fi
+
+if [ -f jboss-fuse/bin/status];
+then
+    rm jboss-fuse/bin/status
+fi
+
+if [ -f jboss-fuse/bin/patch];
+then
+    rm jboss-fuse/bin/patch
+fi
 
 # Lets remove some bits of the distro which just add extra weight in a docker image.
 echo "Deleting distributed artifacts unneeded for production usage."
-rm -rf jboss-fuse/extras
-rm -rf jboss-fuse/quickstarts
+
+if [ -d jboss-fuse/extras];
+then
+    rm -rf jboss-fuse/extras
+fi
+
+if [ -d jboss-fuse/quickstarts];
+then
+    rm -rf jboss-fuse/quickstarts
+fi
 
 #
 # Let the karaf container name/id come from setting the FUSE_KARAF_NAME && FUSE_RUNTIME_ID env vars
