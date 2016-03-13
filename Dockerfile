@@ -17,7 +17,7 @@ ENV FUSE_PUBLIC_STOMP_SSL_PORT 61614
 # Install fuse in the image.
 COPY installs/jboss-fuse/ /opt/jboss/jboss-fuse/
 #COPY jboss-fuse.tar.gz /opt/jboss/
-RUN ls -al /opt/jboss
+#RUN ls -al /opt/jboss
 
 #COPY fuse/ $FUSE_HOME
 #RUN tar -zxvf /opt/jboss/jboss-fuse.tar.gz -C /opt/jboss && \
