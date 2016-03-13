@@ -23,9 +23,12 @@ set -e
 echo "Changing to installs directory"
 cd installs/
 echo `pwd`
-echo "Downloading ${FUSE_ARTIFACT_ID} version ${FUSE_VERSION}"
-curl -O ${FUSE_DISTRO_URL}
-echo "Downloaded ${FUSE_ARTIFACT_ID} version ${FUSE_VERSION}"
+if [ ! -f ${FUSE_ARTIFACT_ID}-${FUSE_VERSION}.zip ];
+then
+    echo "Downloading ${FUSE_ARTIFACT_ID} version ${FUSE_VERSION}"
+    curl -O ${FUSE_DISTRO_URL}
+    echo "Downloaded ${FUSE_ARTIFACT_ID} version ${FUSE_VERSION}"
+fi
 #jar -xvf ${FUSE_ARTIFACT_ID}-${FUSE_VERSION}.zip
 echo "Extracting ${FUSE_ARTIFACT_ID}-${FUSE_VERSION}.zip"
 unzip ${FUSE_ARTIFACT_ID}-${FUSE_VERSION}.zip
