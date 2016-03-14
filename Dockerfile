@@ -24,7 +24,7 @@ RUN ls -al /opt/jboss
 #    ls -al /opt/jboss/jboss-fuse && \
 #    rm /opt/jboss/jboss-fuse.tar.gz
 
-EXPOSE 8181 8101 1099 44444 61616 1883 5672 61613 61617 8883 5671 61614
+EXPOSE 80 8181 8101 1099 44444 61616 1883 5672 61613 61617 8883 5671 61614
 
 USER root
 
