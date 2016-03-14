@@ -148,11 +148,11 @@ then
 	touch jboss-fuse/data/log/karaf.log
 fi
 
-if [ ! -f ${FUSE_ARTIFACT_ID_FOR_DOCKER} ];
-then
-	echo "Packaging prepared server for use by Docker with command: tar -zcvf ${FUSE_ARTIFACT_ID_FOR_DOCKER} ./jboss-fuse -C `pwd`"
-	tar -zcvf ${FUSE_ARTIFACT_ID_FOR_DOCKER} ./jboss-fuse -C `pwd`
-fi
+#if [ ! -f ${FUSE_ARTIFACT_ID_FOR_DOCKER} ];
+#then
+#	echo "Packaging prepared server for use by Docker with command: tar -zcvf ${FUSE_ARTIFACT_ID_FOR_DOCKER} ./jboss-fuse -C `pwd`"
+#	tar -zcvf ${FUSE_ARTIFACT_ID_FOR_DOCKER} ./jboss-fuse -C `pwd`
+#fi
 
 #echo "Removing build artifacts."
 #echo "Deleting ${FUSE_ARTIFACT_ID}-${FUSE_VERSION}"
