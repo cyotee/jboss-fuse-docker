@@ -88,7 +88,7 @@ then
 	sed -i -e 's/environment.prefix=FABRIC8_/environment.prefix=FUSE_/' jboss-fuse/etc/system.properties
 	sed -i -e '/karaf.name = root/d' jboss-fuse/etc/system.properties
 	sed -i -e '/runtime.id=/d' jboss-fuse/etc/system.properties
-	sed -i -e 's/org.osgi.service.http.port=8181/-org.osgi.service.http.port=80' jboss-fuse/etc/system.properties
+	#sed -i -e 's/org.osgi.service.http.port=8181/-org.osgi.service.http.port=80' jboss-fuse/etc/system.properties
 
 	echo "Editing jboss-fuse/bin/setenv file."
 	echo '
