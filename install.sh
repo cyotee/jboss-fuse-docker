@@ -142,6 +142,14 @@ then
 	
 	printf '\nadmin=password,Operator, Maintainer, Deployer, Auditor, Administrator, SuperUser' >> jboss-fuse/etc/users.properties
 	printf '\ndev=password,Operator, Maintainer, Deployer' >> jboss-fuse/etc/users.properties
+	printf '\nsspalding=ssp@1ding,Operator, Maintainer, Deployer, Auditor, Administrator, SuperUser' >> jboss-fuse/etc/users.properties
+	printf '\namurray=amurr@y,Operator, Maintainer, Deployer, Auditor, Administrator, SuperUser' >> jboss-fuse/etc/users.properties
+	printf '\njhoon=jh00n,Operator, Maintainer, Deployer, Auditor, Administrator, SuperUser' >> jboss-fuse/etc/users.properties
+	printf '\nmelwood=m3lw00d,Operator, Maintainer, Deployer' >> jboss-fuse/etc/users.properties
+	printf '\nkeckhart=k3ckh@r7,Operator, Maintainer, Deployer' >> jboss-fuse/etc/users.properties
+	printf '\nsmorman=sm0rman,Operator, Maintainer, Deployer' >> jboss-fuse/etc/users.properties
+	printf '\nnspring=nspr1ng,Operator, Maintainer, Deployer' >> jboss-fuse/etc/users.properties
+	printf '\njnava=jn@v@,Operator, Maintainer, Deployer' >> jboss-fuse/etc/users.properties
 
 	mkdir jboss-fuse/instances
 	mkdir -p jboss-fuse/data/log/
